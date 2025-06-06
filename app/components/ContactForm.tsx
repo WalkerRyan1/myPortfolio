@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<
@@ -38,7 +39,13 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-6">
+    <motion.form
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      onSubmit={handleSubmit}
+      className="max-w-xl mx-auto space-y-6"
+    >
       <div>
         <label
           htmlFor="name"
@@ -107,16 +114,24 @@ export default function ContactForm() {
       </button>
 
       {status === "success" && (
-        <p className="text-green-500 text-center">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-green-500 text-center"
+        >
           Thank you for your message! I'll get back to you soon.
-        </p>
+        </motion.p>
       )}
 
       {status === "error" && (
-        <p className="text-red-500 text-center">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-red-500 text-center"
+        >
           Sorry, there was an error sending your message. Please try again.
-        </p>
+        </motion.p>
       )}
-    </form>
+    </motion.form>
   );
 }
