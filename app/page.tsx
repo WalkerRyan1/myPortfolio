@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-light to-white dark:from-dark dark:to-gray-900 ">
+      <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-light to-white dark:from-dark dark:to-gray-900">
         <motion.div
           ref={heroRef}
           initial="hidden"
@@ -133,7 +133,6 @@ export default function Home() {
         >
           <h2 className="heading text-center">Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Project cards will go here */}
             <div className="bg-light dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg">
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Project 1</h3>
