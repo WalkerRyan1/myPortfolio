@@ -6,8 +6,13 @@ const nextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
-  basePath: "/portfoliodemo", // Replace with your repository name
-  assetPrefix: "/portfoliodemo/", // Replace with your repository name
+  // Only apply basePath and assetPrefix in production
+  ...(process.env.NODE_ENV === "production"
+    ? {
+        basePath: "/myPortfolio",
+        assetPrefix: "/myPortfolio/",
+      }
+    : {}),
 };
 
 module.exports = nextConfig;

@@ -9,7 +9,7 @@
 
 # next.js
 /.next/
-/out/
+# /out/  # Commented out to allow tracking for GitHub Pages
 
 # production
 /build
