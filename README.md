@@ -50,6 +50,3 @@ npm run dev
 - Hero Icons
 - React Intersection Observer
 
-## License
-
-MIT
