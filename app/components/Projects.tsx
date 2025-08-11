@@ -8,19 +8,21 @@ interface Project {
   description: string;
   technologies: string[];
   image: string;
+  video?: string;
   liveUrl?: string;
   githubUrl?: string;
 }
 
 const projects: Project[] = [
   {
-    title: "Portfolio Website",
+    title: "Space Dodge Game",
     description:
-      "A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features smooth animations, and a contact form.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      "A simple space dodge game built with Python3. The player controls a spaceship and must dodge flying obstacles.",
+    technologies: ["Python3", "Pygames"],
     image: "/portfolio-preview.png",
-    liveUrl: "https://walkerryan1.github.io/myPortfolio/",
-    githubUrl: "https://github.com/WalkerRyan1/myPortfolio",
+    video: "/videos/space.mp4",
+
+    githubUrl: "https://github.com/WalkerRyan1/Space_Dodge.git",
   },
 ];
 
@@ -36,11 +38,25 @@ export default function Projects() {
           className="bg-light dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg"
         >
           <div className="relative aspect-video">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
+            {project.video ? (
+              <video
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                poster={project.image}
+              >
+                <source src={project.video} type="video/mp4" />
+              </video>
+            ) : (
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover"
+              />
+            )}
           </div>
           <div className="p-6">
             <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
