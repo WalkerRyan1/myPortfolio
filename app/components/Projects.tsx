@@ -19,9 +19,8 @@ const projects: Project[] = [
     description:
       "A simple space dodge game built with Python3. The player controls a spaceship and must dodge flying obstacles.",
     technologies: ["Python3", "Pygames"],
-    image: "/portfolio-preview.png",
-    video: "/videos/space.mp4",
-
+    image: "portfolio-preview.png",
+    video: "videos/space.mp4",
     githubUrl: "https://github.com/WalkerRyan1/Space_Dodge.git",
   },
 ];
