@@ -41,8 +41,8 @@ const projects: Project[] = [
     description:
       "A Spotify clone application that accesses the Spotify API to display music information.",
     technologies: ["React", "Node.js", "Express", "MongoDB"],
-    image: "/videos/images/spotify.png",
-    video: "/videos/spotifyclone.mp4",
+    image: "videos/images/spotify.png",
+    video: "videos/spotifyclone.mp4",
     githubUrl: "https://github.com/WalkerRyan1/SpotifyClone.git",
   },
 ];
