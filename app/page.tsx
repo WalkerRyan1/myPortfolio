@@ -10,24 +10,13 @@ import {
 } from "@heroicons/react/24/outline";
 import ContactForm from "./components/ContactForm";
 import Projects from "./components/Projects";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  Link,
-} from "@nextui-org/react";
-import ThemeToggle from "./components/ThemeToggle";
-import type { AppProps } from "next/app";
-import { NextUIProvider } from "@nextui-org/react";
-import { ThemeProvider } from "./components/ThemeContext";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
 };
 
-export default function Home({ Component, pageProps }: AppProps) {
+export default function Home() {
   const [heroRef, heroInView] = useInView({ triggerOnce: true });
   const [aboutRef, aboutInView] = useInView({ triggerOnce: true });
   const [skillsRef, skillsInView] = useInView({ triggerOnce: true });
@@ -61,7 +50,6 @@ export default function Home({ Component, pageProps }: AppProps) {
               />
             </div>
           </motion.div>
-
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Hi, I'm <span className="text-primary">Walker!</span>
           </h1>
