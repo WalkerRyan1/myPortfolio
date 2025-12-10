@@ -10,13 +10,24 @@ import {
 } from "@heroicons/react/24/outline";
 import ContactForm from "./components/ContactForm";
 import Projects from "./components/Projects";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Link,
+} from "@nextui-org/react";
+import ThemeToggle from "./components/ThemeToggle";
+import type { AppProps } from "next/app";
+import { NextUIProvider } from "@nextui-org/react";
+import { ThemeProvider } from "./components/ThemeContext";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
 };
 
-export default function Home() {
+export default function Home({ Component, pageProps }: AppProps) {
   const [heroRef, heroInView] = useInView({ triggerOnce: true });
   const [aboutRef, aboutInView] = useInView({ triggerOnce: true });
   const [skillsRef, skillsInView] = useInView({ triggerOnce: true });
@@ -50,11 +61,16 @@ export default function Home() {
               />
             </div>
           </motion.div>
+
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Hi, I'm <span className="text-primary">Walker!</span>
           </h1>
+          <p className="text-xl md:text-2xl text-secondary mb-2">
+            Bachelor of Science in Web Design and Development from Full Sail
+            University
+          </p>
           <p className="text-xl md:text-2xl text-secondary mb-8">
-            A passionate web developer crafting digital experiences
+            Graduates in February 2026
           </p>
           <motion.div
             animate={{ y: [0, 10, 0] }}
@@ -118,10 +134,8 @@ export default function Home() {
           <h2 className="heading text-center">About Me</h2>
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg text-secondary mb-6">
-              I'm a web developer that is all about creating beautiful,
-              functional, and user-friendly websites. With a strong foundation
-              in modern web technologies, I strive to build applications that
-              make a difference.
+              I'm a strong gamer and a strong developer. Problem solving and
+              component creation are my best skills.
             </p>
           </div>
         </motion.div>
@@ -143,7 +157,7 @@ export default function Home() {
               <CodeBracketIcon className="h-12 w-12 text-primary mb-4" />
               <h3 className="text-xl font-semibold mb-2">Frontend</h3>
               <p className="text-secondary">
-                React, Next.js, TypeScript, Tailwind CSS
+                HTML, CSS, JavaScriptReact, Next.js, TypeScript, Tailwind CSS,
               </p>
             </div>
             <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
