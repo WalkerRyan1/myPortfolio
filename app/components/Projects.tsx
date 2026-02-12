@@ -44,6 +44,17 @@ const projects: Project[] = [
     image: "videos/images/spotify.png",
     video: "videos/spotifyclone.mp4",
     githubUrl: "https://github.com/WalkerRyan1/SpotifyClone.git",
+    
+  },
+  {
+    title: "Component Labs",
+    description:
+      "A collection of reusable UI components and design patterns built for modern web applications.",
+    technologies: ["React", "TypeScript", "Tailwind CSS"],
+    image: "videos/images/componentLabs.png",
+    video: "videos/componentlabs.mp4",
+    githubUrl: "https://github.com/WalkerRyan1/ComponentLabs.git",
+    liveUrl: "https://componentlabs.netlify.app",
   },
 ];
 
